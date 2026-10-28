@@ -1,0 +1,35 @@
+local Games = {
+    [335760407] = "https://raw.githubusercontent.com/outlawhub-enjoy/TPS/refs/heads/main/Outlaw",
+    [286090429] = "https://raw.githubusercontent.com/outlawhub-enjoy/ARSENAL/refs/heads/main/Outlaw",
+    [142823291] = "https://raw.githubusercontent.com/outlawhub-enjoy/MM2/refs/heads/main/Outlaw",
+    [90568084448279] = "https://raw.githubusercontent.com/outlawhub-enjoy/ONETAP/refs/heads/main/Outlaw",
+    [88033955914813] = "https://raw.githubusercontent.com/outlawhub-enjoy/FUT/refs/heads/main/Outlaw",
+    [88920112778598] = "https://raw.githubusercontent.com/outlawhub-enjoy/PureSoccer/refs/heads/main/Outlaw",
+    [16447934574] = "https://raw.githubusercontent.com/outlawhub-enjoy/TouchFootball/refs/heads/main/Outlaw",
+
+}
+
+local currentPlaceId = game.PlaceId
+local scriptUrl = Games[currentPlaceId]
+
+if scriptUrl then
+    print("[Loader] game found loading...")
+    
+    local success, scriptContent = pcall(function()
+        return game:HttpGet(scriptUrl)
+    end)
+    
+    if success and scriptContent then
+        local loadedScript, err = loadstring(scriptContent)
+        if loadedScript then
+            loadedScript()
+            print("[Loader] script works.!")
+        else
+            warn("[Loader] error: " .. tostring(err))
+        end
+    else
+        warn("[Loader] load didnt start.")
+    end
+else
+    warn("[Loader] the game is not supported. (PlaceID: " .. tostring(currentPlaceId) .. ")")
+end

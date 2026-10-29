@@ -7,6 +7,9 @@ local Games = {
     [88920112778598] = "https://raw.githubusercontent.com/outlawhub-enjoy/PureSoccer/refs/heads/main/Outlaw",
     [16447934574] = "https://raw.githubusercontent.com/outlawhub-enjoy/TouchFootball/refs/heads/main/Outlaw",
 	[109258067111533] = "https://raw.githubusercontent.com/outlawhub-enjoy/Touchline/refs/heads/main/Outlaw",
+    [7015341259] = "https://raw.githubusercontent.com/outlawhub-enjoy/Touchline/refs/heads/main/Outlaw",
+    [5666473198] = "https://raw.githubusercontent.com/outlawhub-enjoy/TouchFootball/refs/heads/main/Outlaw",
+
 
 }
 
